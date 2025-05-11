@@ -49,8 +49,8 @@ services:
     image: ${IMAGE_NAME}:${DEMO_VERSION}-ad
     container_name: ad
     build:
-      context: ./
-      dockerfile: ${AD_DOCKERFILE}
+      context: ./src/ad
+      dockerfile: Dockerfile
       cache_from:
         - ${IMAGE_NAME}:${IMAGE_VERSION}-ad
       args:
@@ -465,8 +465,8 @@ services:
     image: ${IMAGE_NAME}:${DEMO_VERSION}-product-catalog
     container_name: product-catalog
     build:
-      context: ./
-      dockerfile: ${PRODUCT_CATALOG_DOCKERFILE}
+      context: ./src/product-catalog
+      dockerfile: Dockerfile
       cache_from:
         - ${IMAGE_NAME}:${IMAGE_VERSION}-product-catalog
     deploy:
@@ -527,8 +527,8 @@ services:
     image: ${IMAGE_NAME}:${DEMO_VERSION}-recommendation
     container_name: recommendation
     build:
-      context: ./
-      dockerfile: ${RECOMMENDATION_DOCKERFILE}
+      context: ./src/recommendation
+      dockerfile: Dockerfile
       cache_from:
         - ${IMAGE_NAME}:${IMAGE_VERSION}-recommendation
     deploy:
